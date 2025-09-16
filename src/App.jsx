@@ -2,6 +2,7 @@ import "./App.css";
 import Batsman from "./bat";
 import HandleBall from "./Ball";
 import Ball from "./Ball";
+import Users from "./User";
 function App() {
   // function handleClick() {
   //   alert("i am clicked");
@@ -20,8 +21,11 @@ function App() {
   return (
     <>
       <h3>HI Bangladesh</h3>
-      {
+      {/* {
         <HandleBall></HandleBall>
+      } */}
+      {
+        <Users></Users>
       }
       {/* <Batsman></Batsman>
       <button onClick={handleClick}>click me</button>
