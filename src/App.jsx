@@ -3,6 +3,10 @@ import Batsman from "./bat";
 import HandleBall from "./Ball";
 import Ball from "./Ball";
 import Users from "./User";
+import { Suspense } from "react";
+const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
+.then(res => res.json())
+
 function App() {
   // function handleClick() {
   //   alert("i am clicked");
@@ -25,7 +29,9 @@ function App() {
         <HandleBall></HandleBall>
       } */}
       {
-        <Users></Users>
+        <Suspense fallback={<h3>Loadimg .... </h3>}>
+          <Users fetchUsers = {fetchUsers}></Users>
+        </Suspense>
       }
       {/* <Batsman></Batsman>
       <button onClick={handleClick}>click me</button>
