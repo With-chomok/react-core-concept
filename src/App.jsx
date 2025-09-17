@@ -4,9 +4,25 @@ import HandleBall from "./Ball";
 import Ball from "./Ball";
 import Users from "./User";
 import { Suspense } from "react";
-const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
-.then(res => res.json())
+import Friends from "./Friends";
+import Posts from "./Post";
+// const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
+// .then(res => res.json())
 
+// const fetchFriends = async() => {
+// const res = await fetch("https://jsonplaceholder.typicode.com/users")
+// return res.json();
+
+// }
+
+const fetchPosts = async() =>{
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+  return res.json();
+
+}
+
+// const fetchFriends =fetch("https://jsonplaceholder.typicode.com/users")
+// .then(res => res.json())
 function App() {
   // function handleClick() {
   //   alert("i am clicked");
@@ -22,17 +38,35 @@ function App() {
   //   const newNum = num - 10;
   //   alert(newNum);
   // }
+  const postsPromise = fetchPosts()
   return (
     <>
+
+
+
       <h3>HI Bangladesh</h3>
+
+
+    <Suspense fallback={<h4>post are comming soon....</h4>}>
+    <Posts postsPromise={postsPromise}>
+    
+    </Posts>
+    
+    </Suspense>
+
       {/* {
         <HandleBall></HandleBall>
       } */}
-      {
-        <Suspense fallback={<h3>Loadimg .... </h3>}>
+      
+        {/* <Suspense fallback={<h3>Loadimg .... </h3>}>
           <Users fetchUsers = {fetchUsers}></Users>
         </Suspense>
-      }
+        <Suspense fallback={<h3>friends are comming....</h3>}>
+
+        <Friends fetchFriends={fetchFriends}></Friends>
+
+        </Suspense> */}
+      
       {/* <Batsman></Batsman>
       <button onClick={handleClick}>click me</button>
       <button onClick={handleClick3}>click me</button>
