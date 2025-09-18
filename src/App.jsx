@@ -6,6 +6,7 @@ import Users from "./User";
 import { Suspense } from "react";
 import Friends from "./Friends";
 import Posts from "./Post";
+import Counter from "./Counter";
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
 // .then(res => res.json())
 
@@ -15,11 +16,11 @@ import Posts from "./Post";
 
 // }
 
-const fetchPosts = async() =>{
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts")
-  return res.json();
+// const fetchPosts = async() =>{
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+//   return res.json();
 
-}
+// }
 
 // const fetchFriends =fetch("https://jsonplaceholder.typicode.com/users")
 // .then(res => res.json())
@@ -38,21 +39,21 @@ function App() {
   //   const newNum = num - 10;
   //   alert(newNum);
   // }
-  const postsPromise = fetchPosts()
+  
   return (
     <>
 
-
+<Counter></Counter>
 
       <h3>HI Bangladesh</h3>
-
+{/* 
 
     <Suspense fallback={<h4>post are comming soon....</h4>}>
     <Posts postsPromise={postsPromise}>
-    
+
     </Posts>
     
-    </Suspense>
+    </Suspense> */}
 
       {/* {
         <HandleBall></HandleBall>
