@@ -3,8 +3,7 @@ import ApiDetailsShow from "./ApiShow"
 export default function AllApi({ fetchApi }) {
   const apis = use(fetchApi);
   const arrApis = apis.foods;
-  console.log(arrApis);
-  
+
   return (
     <div className="card">
       <h3>All Api Data : {apis.length}</h3>
