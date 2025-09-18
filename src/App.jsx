@@ -8,6 +8,7 @@ import Friends from "./Friends";
 import Posts from "./Post";
 import Counter from "./Counter";
 import Counted from "./Counted";
+import AllApi from "./AllApi";
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
 // .then(res => res.json())
 
@@ -25,6 +26,10 @@ import Counted from "./Counted";
 
 // const fetchFriends =fetch("https://jsonplaceholder.typicode.com/users")
 // .then(res => res.json())
+const fetchApi = fetch("https://taxi-kitchen-api.vercel.app/api/v1/foods/random")
+.then(res => res.json());
+
+
 function App() {
   // function handleClick() {
   //   alert("i am clicked");
@@ -43,6 +48,12 @@ function App() {
   
   return (
     <>
+
+
+<Suspense fallback={<h3>loading data.......</h3>}>
+  <AllApi fetchApi={fetchApi}> </AllApi>
+</Suspense>
+
 <Counted>
   
 </Counted>
@@ -50,6 +61,8 @@ function App() {
 
       <h3>HI Bangladesh</h3>
 {/* 
+
+
 
     <Suspense fallback={<h4>post are comming soon....</h4>}>
     <Posts postsPromise={postsPromise}>
