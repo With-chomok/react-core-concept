@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Friends from "./Friends";
 import Posts from "./Post";
 import Counter from "./Counter";
+import Counted from "./Counted";
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
 // .then(res => res.json())
 
@@ -42,7 +43,9 @@ function App() {
   
   return (
     <>
-
+<Counted>
+  
+</Counted>
 <Counter></Counter>
 
       <h3>HI Bangladesh</h3>
